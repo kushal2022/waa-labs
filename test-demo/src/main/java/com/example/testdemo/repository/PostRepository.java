@@ -1,14 +1,18 @@
 package com.example.testdemo.repository;
 
 import com.example.testdemo.model.Post;
+import org.springframework.http.ResponseEntity;
 
-import java.util.List;
 
 public interface PostRepository {
 
-    public List<Post> getAll();
+    public ResponseEntity<?> getPosts();
 
-    public Post getById(int id);
+    public ResponseEntity<?>  getById(int id);
 
-    public Post addPost(Post post);
+    public ResponseEntity<?>  addPost(Post post);
+
+    public ResponseEntity<?>  updatePost(int id, Post post);
+
+    public ResponseEntity<?> deletePost(int id);
 }

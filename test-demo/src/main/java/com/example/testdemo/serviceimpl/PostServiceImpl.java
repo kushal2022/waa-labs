@@ -4,9 +4,9 @@ import com.example.testdemo.model.Post;
 import com.example.testdemo.repository.PostRepository;
 import com.example.testdemo.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 @Service
 public class PostServiceImpl implements PostService {
 
@@ -14,17 +14,27 @@ public class PostServiceImpl implements PostService {
     PostRepository postRepository;
 
     @Override
-    public List<Post> getAll() {
-        return postRepository.getAll();
+    public ResponseEntity<?> getPosts() {
+        return postRepository.getPosts();
     }
 
     @Override
-    public Post getById(int id) {
+    public ResponseEntity<?> getById(int id) {
         return postRepository.getById(id);
     }
 
     @Override
-    public Post addPost(Post post) {
+    public ResponseEntity<?> addPost(Post post) {
         return postRepository.addPost(post);
+    }
+
+    @Override
+    public ResponseEntity<?> updatePost(int id, Post post) {
+        return postRepository.updatePost(id, post);
+    }
+
+    @Override
+    public ResponseEntity<?> deletePost(int id) {
+        return postRepository.deletePost(id);
     }
 }

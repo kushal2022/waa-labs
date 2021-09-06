@@ -7,8 +7,7 @@ import org.springframework.hateoas.RepresentationModel;
 
 @Getter
 @Setter
-public class Post extends RepresentationModel<Post> {
-
+public class PostV2 extends RepresentationModel<Post> {
     @JsonProperty("id")
     private int id;
 
@@ -17,7 +16,4 @@ public class Post extends RepresentationModel<Post> {
 
     @JsonProperty("content")
     private String content;
-
-    @JsonProperty("likes")
-    private int likeNumber;
 }
